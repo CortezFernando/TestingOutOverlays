@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     overflow: hidden;
     background: black;
@@ -27,7 +27,7 @@ body {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background: url('https://i.imgur.com/3mXYqXJ.png') repeat;
+    background: url('https://cdn.vectorstock.com/i/500p/93/65/raven-on-gravestone-at-old-cemetery-vector-23189365.jpg') repeat;
     opacity: 0.2;
     animation: fogMove 10s infinite linear;
 }
@@ -41,7 +41,7 @@ body {
     position: absolute;
     width: 80px;
     height: 120px;
-    background: url('https://i.imgur.com/AbGsmEf.png') no-repeat center;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/028/781/942/small/ghost-covered-in-white-cloth-shrouded-in-darkness-ambiguous-symbolism-ai-generated-photo.jpg') no-repeat center;
     background-size: contain;
     opacity: 0;
     transition: opacity 2s;
@@ -59,4 +59,4 @@ body {
     color: white;
     font-size: 20px;
     text-shadow: 0 0 10px white;
-}
+} */

@@ -8,7 +8,68 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
         
-   
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            color: white;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            text-shadow: 0 0 20px white;
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        .fog {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://cdn.vectorstock.com/i/500p/93/65/raven-on-gravestone-at-old-cemetery-vector-23189365.jpg') repeat;
+            opacity: 0.2;
+            animation: fogMove 10s infinite linear;
+        }
+
+        @keyframes fogMove {
+            from { transform: translateX(-10%); }
+            to { transform: translateX(10%); }
+        }
+
+        .ghost {
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            background: url('https://static.vecteezy.com/system/resources/thumbnails/028/781/942/small/ghost-covered-in-white-cloth-shrouded-in-darkness-ambiguous-symbolism-ai-generated-photo.jpg') no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+
+        .event-box {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            text-shadow: 0 0 10px white;
+        }
     </style>
 </head>
 <body>
@@ -17,7 +78,7 @@
     <div class="ghost" id="ghost"></div>
     <div class="event-box" id="event-box" role="status" aria-live="polite">Listening for ghost activity...</div>
     
-    <script>
+    <script> 
         function showGhost() {
             const ghost = document.getElementById('ghost');
             ghost.style.top = Math.random() * window.innerHeight + 'px';
