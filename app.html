@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>xheavenfuryx's Stream Overlay</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        
+   
+    </style>
+</head>
+<body>
+    <div class="fog"></div>
+    <div class="overlay" role="status" aria-live="polite">GHOST HUNT IN PROGRESS</div>
+    <div class="ghost" id="ghost"></div>
+    <div class="event-box" id="event-box" role="status" aria-live="polite">Listening for ghost activity...</div>
+    
+    <script>
+        function showGhost() {
+            const ghost = document.getElementById('ghost');
+            ghost.style.top = Math.random() * window.innerHeight + 'px';
+            ghost.style.left = Math.random() * window.innerWidth + 'px';
+            ghost.style.opacity = 1;
+            setTimeout(() => ghost.style.opacity = 0, 3000);
+        }
+        
+        function updateEvent() {
+            const events = [
+                "Ghost whispers...",
+                "Cold breath appears...",
+                "EMF spikes detected!",
+                "Flickering lights...",
+                "Strange noises in the dark..."
+            ];
+            document.getElementById('event-box').innerText = events[Math.floor(Math.random() * events.length)];
+        }
+        
+        const ghostInterval = setInterval(showGhost, 10000);
+        const eventInterval = setInterval(updateEvent, 5000);
+        
+        // Cleanup function if needed
+        function cleanup() {
+            clearInterval(ghostInterval);
+            clearInterval(eventInterval);
+        }
+    </script>
+</body>
+</html>
